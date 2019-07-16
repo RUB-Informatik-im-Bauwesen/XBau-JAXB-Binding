@@ -1,102 +1,5 @@
 <jxb:bindings version="2.0" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-<!-- ====================================================================================== -->
-<!-- ============= Kollisionen (class conflicts) in der ObjectFactory-Klasse. ============= -->
-<!-- ====================================================================================== -->
- 
-
- <jxb:bindings schemaLocation=" http://schemas.opengis.net/gml/3.2.1/datums.xsd">
-	<jxb:bindings node="//xsd:element[@name='SecondDefiningParameter']">
-   			<jxb:class name="SecondDefiningParameterChoice"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='ellipsoid']">
-   			<jxb:class name="ellipsoidProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='primeMeridian']">
-   			<jxb:class name="primeMeridianProperty"/>
-	</jxb:bindings>
-</jxb:bindings>
-
- <jxb:bindings schemaLocation="http://schemas.opengis.net/gml/3.2.1/coordinateReferenceSystems.xsd">
-
-	<jxb:bindings node="//xsd:element[@name='cartesianCS']">
-   			<jxb:class name="cartesianCSProperty"/>
-	</jxb:bindings>
- 
-	<jxb:bindings node="//xsd:element[@name='sphericalCS']">
-   			<jxb:class name="sphericalCSProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='temporalDatum']">
-   			<jxb:class name="temporalDatumProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='affineCS']">
-   			<jxb:class name="affineCSProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='polarCS']">
-   			<jxb:class name="polarCSProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='imageDatum']">
-   			<jxb:class name="imageDatumProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='ellipsoidalCS']">
-   			<jxb:class name="ellipsoidalCSProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='userDefinedCS']">
-   			<jxb:class name="userDefinedCSProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='linearCS']">
-   			<jxb:class name="linearCSProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='timeCS']">
-   			<jxb:class name="timeCSProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='conversion']">
-   			<jxb:class name="conversionProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='verticalDatum']">
-   			<jxb:class name="verticalDatumProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='cylindricalCS']">
-   			<jxb:class name="cylindricalCSProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='verticalCS']">
-   			<jxb:class name="verticalCSProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='geodeticDatum']">
-   			<jxb:class name="geodeticDatumProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='engineeringDatum']">
-   			<jxb:class name="engineeringDatumProperty"/>
-	</jxb:bindings>
- 
- </jxb:bindings>
-
- <jxb:bindings schemaLocation=" http://schemas.opengis.net/gml/3.2.1/coordinateOperations.xsd">
-	<jxb:bindings node="//xsd:element[@name='parameterValue']">
-   			<jxb:class name="parameterValueProperty"/>
-	</jxb:bindings>
-	
-	<jxb:bindings node="//xsd:element[@name='operationParameter']">
-   			<jxb:class name="operationParameterProperty"/>
-	</jxb:bindings>
-</jxb:bindings>
- 
 <!--  this attempt does NOT work: -->
 <!-- ===================================================== -->
 <!-- RESOLVE CLASS CONFLICT: 'SphericalCS vs. sphericalCS' -->
@@ -151,21 +54,6 @@
 <!-- ====================================================== -->
 
  
-<!-- ===================================================== -->
-<!-- ========== RESOLVE NAMING CONFLICT: 'Rows' ========== -->
-<!-- ===================================================== -->
-
-    <!--========== geometryPrimitives.xsd ========== -->
-    <jxb:bindings schemaLocation="http://schemas.opengis.net/gml/3.2.1/geometryPrimitives.xsd">	
-    	<jxb:bindings node="//xsd:complexType[@name='AbstractGriddedSurfaceType']">
-    		<jxb:bindings node="//xsd:extension[@base='gml:AbstractParametricCurveSurfaceType']">
-    			<jxb:bindings node="//xsd:attribute[@name='rows']">
-	    			<jxb:property name="rowsAbstractGriddedSurfaceType"/>
-    			</jxb:bindings>
-    		</jxb:bindings>
-    	</jxb:bindings>
-    </jxb:bindings>
-<!-- ===================================================== -->   
 
 
 </jxb:bindings>

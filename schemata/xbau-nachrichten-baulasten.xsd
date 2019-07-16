@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xbau="http://www.is-argebau.de/xbau/2" targetNamespace="http://www.is-argebau.de/xbau/2" version="2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xbau="http://www.xleitstelle.de/xbau/schema/2/1/" targetNamespace="http://www.xleitstelle.de/xbau/schema/2/1/" version="2.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:annotation>
+    <xs:appinfo>
+      <standard>
+        <nameLang>XBau - Standard für die Datenkommunikation der Bauaufsichtsbehörde</nameLang>
+        <nameKurz>XBau</nameKurz>
+        <nameTechnisch>xbau</nameTechnisch>
+        <kennung>urn:xoev-de:bmk:standard:xbau</kennung>
+        <beschreibung>XBau ist der XÖV-Standard für den Datenaustausch der Bauaufsichtsbehörden mit ihren Kommunikationspartnern (Bauherren, Architektenbüros, Behörden zahlreicher Rechtsbereiche).</beschreibung>
+      </standard>
+      <versionStandard>
+        <version>2.1</version>
+        <beschreibung>In vielen Teilen überarbeitete und erweiterte produktionsreife Fassung des Standards XBau. Auf der Basis des Baurechts des Bundes und der Länder und eng am Bedarf der Praxis der Behörden entwickelt. Erweiterungen und Verbesserungen befinden sich in der Planung auch für die Zukunft.</beschreibung>
+        <versionXOEVHandbuch>2.1.0</versionXOEVHandbuch>
+        <versionXGenerator>2.6.1</versionXGenerator>
+        <versionModellierungswerkzeug>18.0</versionModellierungswerkzeug>
+        <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+      </versionStandard>
+    </xs:appinfo>
+  </xs:annotation>
   <xs:include schemaLocation="xbau-baukasten.xsd" />
   <xs:element name="baulasten.vorlageErklaerung.0700">
     <xs:annotation>
       <xs:appinfo>
-        <title>Vorlage Baulasterklärung</title>
+        <title>Baulasterklärung</title>
       </xs:appinfo>
       <xs:documentation>Diese Nachricht dient dazu, der Bauaufsichtsbehörde die Baulast-Erklärung sowie ergänzende Dokumentationen zuzustellen.</xs:documentation>
     </xs:annotation>
@@ -86,7 +105,7 @@
                 <xs:documentation>In diesem Element wird der Vorgang (Vorgangsnummer, unter der die Behörde die Baulasterklärung bearbeitet) genannt bzw. dem Antragsteller mitgeteilt  bzw. die Nachricht baulasten.vorlageErklaerung.0700 eingetragen, durch deren Eingang bei der Bauaufsichtsbehörde der Vorgang ausgelöst worden ist.</xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="befundliste" type="xbau:BefundlisteFormell">
+            <xs:element name="befundliste" type="xbau:BefundlisteAntragFormell">
               <xs:annotation>
                 <xs:documentation>Hier sind die Ergebnisse der formellen Prüfung enthalten. Die Liste nennt die  Mängel, die bei der Prüfung der Baulast-Erklärung aufgefallen sind.</xs:documentation>
               </xs:annotation>

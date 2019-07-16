@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xbau="http://www.is-argebau.de/xbau/2" targetNamespace="http://www.is-argebau.de/xbau/2" version="2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xbau="http://www.xleitstelle.de/xbau/schema/2/1/" targetNamespace="http://www.xleitstelle.de/xbau/schema/2/1/" version="2.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:annotation>
+    <xs:appinfo>
+      <standard>
+        <nameLang>XBau - Standard für die Datenkommunikation der Bauaufsichtsbehörde</nameLang>
+        <nameKurz>XBau</nameKurz>
+        <nameTechnisch>xbau</nameTechnisch>
+        <kennung>urn:xoev-de:bmk:standard:xbau</kennung>
+        <beschreibung>XBau ist der XÖV-Standard für den Datenaustausch der Bauaufsichtsbehörden mit ihren Kommunikationspartnern (Bauherren, Architektenbüros, Behörden zahlreicher Rechtsbereiche).</beschreibung>
+      </standard>
+      <versionStandard>
+        <version>2.1</version>
+        <beschreibung>In vielen Teilen überarbeitete und erweiterte produktionsreife Fassung des Standards XBau. Auf der Basis des Baurechts des Bundes und der Länder und eng am Bedarf der Praxis der Behörden entwickelt. Erweiterungen und Verbesserungen befinden sich in der Planung auch für die Zukunft.</beschreibung>
+        <versionXOEVHandbuch>2.1.0</versionXOEVHandbuch>
+        <versionXGenerator>2.6.1</versionXGenerator>
+        <versionModellierungswerkzeug>18.0</versionModellierungswerkzeug>
+        <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+      </versionStandard>
+    </xs:appinfo>
+  </xs:annotation>
   <xs:include schemaLocation="xbau-baukasten.xsd" />
   <xs:element name="bauzustand.anzeige.0920">
     <xs:annotation>
@@ -30,7 +49,7 @@
   <xs:element name="bauzustand.befundliste.0921">
     <xs:annotation>
       <xs:appinfo>
-        <title>Übermittlung von Befunden</title>
+        <title>Befundliste</title>
       </xs:appinfo>
       <xs:documentation>Diese Nachricht teilt dem Bauherrn festgestellte Ausführungsmangel mit, falls die Prüfung des Bauzustandes durch die Behörde ein negatives Ergebnis ergeben hat.</xs:documentation>
     </xs:annotation>
@@ -80,7 +99,7 @@
   <xs:element name="bauzustand.freigabe.0922">
     <xs:annotation>
       <xs:appinfo>
-        <title>Übermittlung der Freigabe</title>
+        <title>Freigabe</title>
       </xs:appinfo>
       <xs:documentation>Mit dieser Nachricht erklärt die Bauaufsichtsbehörde dem Bauherrn ihre Zustimmung zur Fortführung der Bauarbeiten gemäß § 82 Abs. 1 Satz 2 MBO.</xs:documentation>
     </xs:annotation>

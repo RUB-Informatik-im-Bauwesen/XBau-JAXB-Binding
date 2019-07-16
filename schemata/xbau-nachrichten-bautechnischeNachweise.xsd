@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xbau="http://www.is-argebau.de/xbau/2" targetNamespace="http://www.is-argebau.de/xbau/2" version="2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xbau="http://www.xleitstelle.de/xbau/schema/2/1/" targetNamespace="http://www.xleitstelle.de/xbau/schema/2/1/" version="2.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:annotation>
+    <xs:appinfo>
+      <standard>
+        <nameLang>XBau - Standard für die Datenkommunikation der Bauaufsichtsbehörde</nameLang>
+        <nameKurz>XBau</nameKurz>
+        <nameTechnisch>xbau</nameTechnisch>
+        <kennung>urn:xoev-de:bmk:standard:xbau</kennung>
+        <beschreibung>XBau ist der XÖV-Standard für den Datenaustausch der Bauaufsichtsbehörden mit ihren Kommunikationspartnern (Bauherren, Architektenbüros, Behörden zahlreicher Rechtsbereiche).</beschreibung>
+      </standard>
+      <versionStandard>
+        <version>2.1</version>
+        <beschreibung>In vielen Teilen überarbeitete und erweiterte produktionsreife Fassung des Standards XBau. Auf der Basis des Baurechts des Bundes und der Länder und eng am Bedarf der Praxis der Behörden entwickelt. Erweiterungen und Verbesserungen befinden sich in der Planung auch für die Zukunft.</beschreibung>
+        <versionXOEVHandbuch>2.1.0</versionXOEVHandbuch>
+        <versionXGenerator>2.6.1</versionXGenerator>
+        <versionModellierungswerkzeug>18.0</versionModellierungswerkzeug>
+        <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+      </versionStandard>
+    </xs:appinfo>
+  </xs:annotation>
   <xs:include schemaLocation="xbau-baukasten.xsd" />
   <xs:complexType name="RahmendatenGebuehrenberechnung">
     <xs:annotation>
@@ -12,7 +31,7 @@
         </xs:annotation>
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="bauwerksklasse" type="xbau:Code.Bauwerksklasse">
+            <xs:element name="bauwerksklasse" type="xbau:Code.MppvoBauwerksklasse">
               <xs:annotation>
                 <xs:documentation>Hier ist die Bauwerksklasse abgebildet, die dem Bauvorhaben zugeordnet werden kann.</xs:documentation>
               </xs:annotation>
@@ -48,8 +67,7 @@
             </xs:element>
             <xs:element name="summeGesamt" type="xs:positiveInteger">
               <xs:annotation>
-                <xs:documentation>Summe über alle Positionen (in Eurocent). Der anrechenbare Bauuwert für das Bauvorhaben.
-Bauwerksklasse streichen? Sie scheint nicht in die Berechnung dieser Summe einzufließen.</xs:documentation>
+                <xs:documentation>Summe über alle Positionen (in Eurocent). Der anrechenbare Bauuwert für das Bauvorhaben.</xs:documentation>
               </xs:annotation>
             </xs:element>
           </xs:sequence>
@@ -150,7 +168,7 @@ Diese Alternative wird angewendet, falls die Basiswerte nicht ermittelt werden k
   <xs:element name="bautechnischeNachweise.auftragsbestaetigung.0501">
     <xs:annotation>
       <xs:appinfo>
-        <title>Bestätigung des Auftrags</title>
+        <title>Auftragsbestätigung</title>
       </xs:appinfo>
       <xs:documentation>Der Prüfingenieur bestätigt mit dieser Nachricht, dass er den Auftrag erhalten und angenommen hat.</xs:documentation>
     </xs:annotation>
@@ -171,7 +189,7 @@ Diese Alternative wird angewendet, falls die Basiswerte nicht ermittelt werden k
   <xs:element name="bautechnischeNachweise.formellePruefung.0502">
     <xs:annotation>
       <xs:appinfo>
-        <title>Formelle Prüfung des Auftrags</title>
+        <title>Ergebnis der formellen Prüfung</title>
       </xs:appinfo>
       <xs:documentation>Diese Nachricht nennt Mängel bzw. Nachbesserungsbedarf zu einem erteilten Prüfauftrag.</xs:documentation>
     </xs:annotation>
@@ -184,7 +202,7 @@ Diese Alternative wird angewendet, falls die Basiswerte nicht ermittelt werden k
                 <xs:documentation>Hier trägt der Auftragnehmer die Vorgangsnumme der Bauaufsichtsbehörde ein, die ihm mit der Beauftragung (Nachricht 0500) zugestellt wurde. Außerdem wird die Referenz auf die Nachricht 0500 eingetragen.</xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="befundliste" type="xbau:BefundlisteFormell">
+            <xs:element name="befundliste" type="xbau:BefundlisteAntragFormell">
               <xs:annotation>
                 <xs:documentation>Nach der Prüfiung des Auftrags durch den Auftragnehmer: Hier sind die Ergebnisse der formellen Prüfung als Befundliste enthalten. Für jeden Befund sind die entsprechenden Parameter gefüllt, die Inhalt und Bezug des Befundes nachvollziehbar machen.</xs:documentation>
               </xs:annotation>
@@ -289,7 +307,7 @@ vorliegende Mängel- bzw. Befundliste.</xs:documentation>
   <xs:element name="bautechnischeNachweise.nachbesserung.0505">
     <xs:annotation>
       <xs:appinfo>
-        <title>Nachgebesserte technische Planungsunterlagen</title>
+        <title>Nachgebesserte Planungsunterlagen</title>
       </xs:appinfo>
       <xs:documentation>Diese Nachricht enthält nachgebesserte Unterlagen zum Prüfauftrags. Sie bezieht sich auf den erteilten Prüfauftrag und auf eine Mängelliste, die bei Prüfung der technischen Planungsdokumente erarbeitet wurde.</xs:documentation>
     </xs:annotation>

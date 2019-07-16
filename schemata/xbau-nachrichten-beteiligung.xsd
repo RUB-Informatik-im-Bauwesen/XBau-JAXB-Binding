@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xbau="http://www.is-argebau.de/xbau/2" targetNamespace="http://www.is-argebau.de/xbau/2" version="2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xbau="http://www.xleitstelle.de/xbau/schema/2/1/" targetNamespace="http://www.xleitstelle.de/xbau/schema/2/1/" version="2.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:annotation>
+    <xs:appinfo>
+      <standard>
+        <nameLang>XBau - Standard für die Datenkommunikation der Bauaufsichtsbehörde</nameLang>
+        <nameKurz>XBau</nameKurz>
+        <nameTechnisch>xbau</nameTechnisch>
+        <kennung>urn:xoev-de:bmk:standard:xbau</kennung>
+        <beschreibung>XBau ist der XÖV-Standard für den Datenaustausch der Bauaufsichtsbehörden mit ihren Kommunikationspartnern (Bauherren, Architektenbüros, Behörden zahlreicher Rechtsbereiche).</beschreibung>
+      </standard>
+      <versionStandard>
+        <version>2.1</version>
+        <beschreibung>In vielen Teilen überarbeitete und erweiterte produktionsreife Fassung des Standards XBau. Auf der Basis des Baurechts des Bundes und der Länder und eng am Bedarf der Praxis der Behörden entwickelt. Erweiterungen und Verbesserungen befinden sich in der Planung auch für die Zukunft.</beschreibung>
+        <versionXOEVHandbuch>2.1.0</versionXOEVHandbuch>
+        <versionXGenerator>2.6.1</versionXGenerator>
+        <versionModellierungswerkzeug>18.0</versionModellierungswerkzeug>
+        <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+      </versionStandard>
+    </xs:appinfo>
+  </xs:annotation>
   <xs:include schemaLocation="xbau-baukasten.xsd" />
   <xs:element name="beteiligung.aufforderung.0300">
     <xs:annotation>
@@ -52,7 +71,7 @@ Es muss sich nicht um dieselben Unterlagen handeln, die dem Bauantrag beilagen, 
   <xs:element name="beteiligung.formellePruefung.0301">
     <xs:annotation>
       <xs:appinfo>
-        <title>Ergebnisse der formellen Prüfung</title>
+        <title>Ergebnis der formellen Prüfung</title>
       </xs:appinfo>
       <xs:documentation>Diese Nachricht adressiert die beteiligte Behörde an die Bauaufsichtsbehörde. Sie enthält die Ergebnisse der formellen Prüfung der vorliegenden Aufforderung zur Stellungnahme.</xs:documentation>
     </xs:annotation>
@@ -65,7 +84,7 @@ Es muss sich nicht um dieselben Unterlagen handeln, die dem Bauantrag beilagen, 
                 <xs:documentation>Unterhalb dieses Elements werden Eintragungen vorgenommen, um auf den laufenden Vorgang der adressierten Bauaufsichtsbehörde Bezug zu nehmen; außerdem auf die Nachricht 0300, auf die die vorliegende Nachricht antwortet.</xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="befundliste" type="xbau:BefundlisteFormell">
+            <xs:element name="befundliste" type="xbau:BefundlisteAntragFormell">
               <xs:annotation>
                 <xs:documentation>Hier sind die Ergebnisse der formellen Prüfung der Anfrage enthalten. Es handelt sich um Listen ggf. vorliegender Mängel der Anfrage bzw. der anliegenden Dokumentation (Nachricht 0300).</xs:documentation>
               </xs:annotation>
@@ -125,7 +144,7 @@ Geänderte oder ergänzte Daten werden als Brutto-Datensatz übermittelt.</xs:do
   <xs:element name="beteiligung.stellungnahme.0303">
     <xs:annotation>
       <xs:appinfo>
-        <title>Übermittlung der Stellungnahme</title>
+        <title>Stellungnahme</title>
       </xs:appinfo>
       <xs:documentation>Diese Nachricht verwendet die beteiligte Behörde, um der  Bauaufsichtsbehörde ihre Stellungnahme zuzustellen.</xs:documentation>
     </xs:annotation>
@@ -143,18 +162,23 @@ Geänderte oder ergänzte Daten werden als Brutto-Datensatz übermittelt.</xs:do
                 <xs:documentation>Unterhalb dieses Elements ist die Stellungnahme eingefügt, die aus der materiellen Prüfung durch die beteiligte Behörde hervorgegangen ist. Die Stellungnahme wird in der Nachricht in einer von zwei alternativen Formaten übermittelt.</xs:documentation>
               </xs:annotation>
               <xs:complexType>
-                <xs:choice>
-                  <xs:element name="stellungnahmeFormlos" type="xbau:Text">
+                <xs:sequence>
+                  <xs:element name="stellungnahmeStrukturiert" maxOccurs="unbounded" type="xbau:StellungnahmeStrukturiert">
                     <xs:annotation>
-                      <xs:documentation>Die Stellungnahme ist in dieses Element als Fließtext einzufügen, falls eine formlose Stellungnahme angefordert wurde.</xs:documentation>
+                      <xs:documentation>Um hier eine strukturierte Stellungnahme einzutragen, ist eine bestimmte Form bei der Dokumentation der Stellungnahme einzuhalten.  Es sind die Parameter dieses Objekts zu füllen.</xs:documentation>
                     </xs:annotation>
                   </xs:element>
-                  <xs:element name="stellungnahmeStrukturiert" type="xbau:Bescheid">
+                  <xs:element name="hinweise" minOccurs="0" type="xbau:TextFormatiert">
                     <xs:annotation>
-                      <xs:documentation>Falls eine strukturierte Stellungnahme angefordert wurde, ist eine bestimmte Form bei der Dokumentation der Stellungnahme einzuhalten.  Es sind die Parameter dieses Objekts zu füllen.</xs:documentation>
+                      <xs:documentation>Hier werden ggf. ergänzende Hinweise zur Stellungnahme gegeben.</xs:documentation>
                     </xs:annotation>
                   </xs:element>
-                </xs:choice>
+                  <xs:element name="rechtshelfsbelehrung" type="xbau:TextFormatiert">
+                    <xs:annotation>
+                      <xs:documentation>Hier werden die Rechtshelfsbelehrungen zur Stellungnahme gegeben.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
               </xs:complexType>
             </xs:element>
           </xs:sequence>

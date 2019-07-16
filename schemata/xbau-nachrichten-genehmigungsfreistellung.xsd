@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xbau="http://www.is-argebau.de/xbau/2" targetNamespace="http://www.is-argebau.de/xbau/2" version="2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xbau="http://www.xleitstelle.de/xbau/schema/2/1/" targetNamespace="http://www.xleitstelle.de/xbau/schema/2/1/" version="2.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:annotation>
+    <xs:appinfo>
+      <standard>
+        <nameLang>XBau - Standard für die Datenkommunikation der Bauaufsichtsbehörde</nameLang>
+        <nameKurz>XBau</nameKurz>
+        <nameTechnisch>xbau</nameTechnisch>
+        <kennung>urn:xoev-de:bmk:standard:xbau</kennung>
+        <beschreibung>XBau ist der XÖV-Standard für den Datenaustausch der Bauaufsichtsbehörden mit ihren Kommunikationspartnern (Bauherren, Architektenbüros, Behörden zahlreicher Rechtsbereiche).</beschreibung>
+      </standard>
+      <versionStandard>
+        <version>2.1</version>
+        <beschreibung>In vielen Teilen überarbeitete und erweiterte produktionsreife Fassung des Standards XBau. Auf der Basis des Baurechts des Bundes und der Länder und eng am Bedarf der Praxis der Behörden entwickelt. Erweiterungen und Verbesserungen befinden sich in der Planung auch für die Zukunft.</beschreibung>
+        <versionXOEVHandbuch>2.1.0</versionXOEVHandbuch>
+        <versionXGenerator>2.6.1</versionXGenerator>
+        <versionModellierungswerkzeug>18.0</versionModellierungswerkzeug>
+        <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+      </versionStandard>
+    </xs:appinfo>
+  </xs:annotation>
   <xs:include schemaLocation="xbau-baukasten.xsd" />
   <xs:element name="genehmigungsfreistellung.anzeige.0600">
     <xs:annotation>
       <xs:appinfo>
-        <title>Anzeige des Bauvorhabens</title>
+        <title>Anzeige des Bauvorhabens (Gemeinde)</title>
       </xs:appinfo>
       <xs:documentation>Mit dieser Nachricht zeigt der Bauherr der Gemeinde wg. möglicher Freistellung von der Genehmigungspflicht sein Vorhaben an. Die Nachricht enthält die einschlägigen Daten zum Vorhaben, ergänzend dokumentiert durch Unterlagen, die Bauvorlagen entsprechen sowie sonstige Unterlagen.</xs:documentation>
     </xs:annotation>
@@ -35,7 +54,7 @@
   <xs:element name="genehmigungsfreistellung.anzeigeBAB.0601">
     <xs:annotation>
       <xs:appinfo>
-        <title>Unterrichtung der Bauaufsichtsbehörde über 'Anzeige Bauvorhaben'</title>
+        <title>Anzeige des Bauvorhabens (Baubehörde)</title>
       </xs:appinfo>
       <xs:documentation>Mit dieser Nachricht unterrichtet die Gemeinde die Bauaufsichtsbehörde über die eingegangene Anzeige der Genehmigungsfreistellung.</xs:documentation>
     </xs:annotation>
@@ -71,7 +90,7 @@
   <xs:element name="genehmigungsfreistellung.ergebnis.0602">
     <xs:annotation>
       <xs:appinfo>
-        <title>Mitteilung Ergebnis an den Bauherrn</title>
+        <title>Ergebnis der Prüfung</title>
       </xs:appinfo>
       <xs:documentation>Mittels dieser Nachricht teilt die Gemeinde dem Bauherrn das Ergebnis der Prüfung seiner Anzeige mit. Der Bauherr erfährt, ob sein Vorhaben genehmigungspflichtig ist. Auch erhält er Informationen, ob die Gemeinde eine Untersagung gemäß § 15 BauGB beantragt hat.</xs:documentation>
     </xs:annotation>
@@ -97,7 +116,7 @@
   <xs:element name="genehmigungsfreistellung.ergebnisBAB.0603">
     <xs:annotation>
       <xs:appinfo>
-        <title>Information Ergebniss an die Bauaufsichtsbehörde</title>
+        <title>Anzeige des Prüfergebnisses (Baubehörde)</title>
       </xs:appinfo>
       <xs:documentation>Diese Nachricht unterrichtet die Bauaufsichtsbehörde über das Ergebnis der Prüfung, das dem Bauherrn von der Gemeinde übermittelt wurde.</xs:documentation>
     </xs:annotation>
