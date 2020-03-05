@@ -23,18 +23,15 @@ public class XBauExporter {
 			context = JAXBContext.newInstance("de.xleitstelle.xbau.schema._2._1");
 
 			Marshaller marshaller = context.createMarshaller();
-			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+			marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
 			marshaller.setProperty("com.sun.xml.bind.namespacePrefixMapper",
 					new CustomNamespacePrefixMapper());
 
 			OutputStream outputStream = new FileOutputStream(path);
-			// OutputStream outputStream = new FileOutputStream("testing" + i + ".xml");
-			XMLOutputFactory outputFactory = XMLOutputFactory.newInstance();
-			XMLEventWriter xmlEventWriter = outputFactory.createXMLEventWriter(outputStream);
+			marshaller.marshal(xmlRoot, outputStream);
 
-			marshaller.marshal(xmlRoot, xmlEventWriter);
-
-		} catch (JAXBException | FileNotFoundException | XMLStreamException e2) {
+		} catch (JAXBException | FileNotFoundException e2) {
 			e2.printStackTrace();
 		}
 	}
