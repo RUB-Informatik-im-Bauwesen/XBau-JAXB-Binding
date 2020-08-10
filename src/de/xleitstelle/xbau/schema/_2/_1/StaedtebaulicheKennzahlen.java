@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.8-b130911.1802 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2019.07.16 um 10:40:06 AM CEST 
+// Generiert: 2019.07.18 um 07:55:25 AM CEST 
 //
 
 
@@ -25,9 +25,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="geschossflaechenzahl" type="{http://www.w3.org/2001/XMLSchema}short" minOccurs="0"/>
- *         &lt;element name="grundflaechenzahl" type="{http://www.w3.org/2001/XMLSchema}short" minOccurs="0"/>
- *         &lt;element name="baumassenzahl" type="{http://www.w3.org/2001/XMLSchema}short" minOccurs="0"/>
+ *         &lt;element name="geschossflaechenzahl" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         &lt;element name="grundflaechenzahl" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         &lt;element name="baumassenzahl" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -44,19 +44,19 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class StaedtebaulicheKennzahlen {
 
-    protected Short geschossflaechenzahl;
-    protected Short grundflaechenzahl;
-    protected Short baumassenzahl;
+    protected Float geschossflaechenzahl;
+    protected Float grundflaechenzahl;
+    protected Float baumassenzahl;
 
     /**
      * Ruft den Wert der geschossflaechenzahl-Eigenschaft ab.
      * 
      * @return
      *     possible object is
-     *     {@link Short }
+     *     {@link Float }
      *     
      */
-    public Short getGeschossflaechenzahl() {
+    public Float getGeschossflaechenzahl() {
         return geschossflaechenzahl;
     }
 
@@ -65,10 +65,10 @@ public class StaedtebaulicheKennzahlen {
      * 
      * @param value
      *     allowed object is
-     *     {@link Short }
+     *     {@link Float }
      *     
      */
-    public void setGeschossflaechenzahl(Short value) {
+    public void setGeschossflaechenzahl(Float value) {
         this.geschossflaechenzahl = value;
     }
 
@@ -77,10 +77,10 @@ public class StaedtebaulicheKennzahlen {
      * 
      * @return
      *     possible object is
-     *     {@link Short }
+     *     {@link Float }
      *     
      */
-    public Short getGrundflaechenzahl() {
+    public Float getGrundflaechenzahl() {
         return grundflaechenzahl;
     }
 
@@ -89,10 +89,10 @@ public class StaedtebaulicheKennzahlen {
      * 
      * @param value
      *     allowed object is
-     *     {@link Short }
+     *     {@link Float }
      *     
      */
-    public void setGrundflaechenzahl(Short value) {
+    public void setGrundflaechenzahl(Float value) {
         this.grundflaechenzahl = value;
     }
 
@@ -101,10 +101,10 @@ public class StaedtebaulicheKennzahlen {
      * 
      * @return
      *     possible object is
-     *     {@link Short }
+     *     {@link Float }
      *     
      */
-    public Short getBaumassenzahl() {
+    public Float getBaumassenzahl() {
         return baumassenzahl;
     }
 
@@ -113,10 +113,10 @@ public class StaedtebaulicheKennzahlen {
      * 
      * @param value
      *     allowed object is
-     *     {@link Short }
+     *     {@link Float }
      *     
      */
-    public void setBaumassenzahl(Short value) {
+    public void setBaumassenzahl(Float value) {
         this.baumassenzahl = value;
     }
 

@@ -41,7 +41,7 @@
                 <xs:documentation>Hier sind die Daten zum  Bauvorhaben (Wer, Was, Wo) enthalten.</xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="beantragteAbweichung" minOccurs="0" type="xbau:AbweichungBeantragt">
+            <xs:element name="beantragteAbweichung" minOccurs="0" maxOccurs="unbounded" type="xbau:AbweichungBeantragt">
               <xs:annotation>
                 <xs:documentation>Hier sind ggf. Daten zu einer beantragten Abweichung eingefügt, über die im Baugenehmigungsverfahren entschieden werden muss.</xs:documentation>
               </xs:annotation>

@@ -2,16 +2,14 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.8-b130911.1802 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2019.07.16 um 10:40:06 AM CEST 
+// Generiert: 2019.07.18 um 07:55:25 AM CEST 
 //
 
 
 package de.xleitstelle.xbau.schema._2._1;
 
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -27,13 +25,13 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="bebauteGrundstuecksflaeche" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="nichtBebauteGrundstuecksflaeche" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="versiegelteFlaeche" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="spielUndFreizeitflaeche" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="flaecheDerNebenanlagen" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="flaecheDerGemeinschaftsanlagen" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="stellplaetzeUndDerenZufahrten" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
+ *         &lt;element name="bebauteGrundstuecksflaeche" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         &lt;element name="nichtBebauteGrundstuecksflaeche" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         &lt;element name="versiegelteFlaeche" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         &lt;element name="spielUndFreizeitflaeche" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         &lt;element name="flaecheDerNebenanlagen" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         &lt;element name="flaecheDerGemeinschaftsanlagen" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         &lt;element name="stellplaetzeUndDerenZufahrten" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -54,30 +52,23 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Grundstuecksflaechen {
 
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger bebauteGrundstuecksflaeche;
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger nichtBebauteGrundstuecksflaeche;
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger versiegelteFlaeche;
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger spielUndFreizeitflaeche;
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger flaecheDerNebenanlagen;
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger flaecheDerGemeinschaftsanlagen;
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger stellplaetzeUndDerenZufahrten;
+    protected Float bebauteGrundstuecksflaeche;
+    protected Float nichtBebauteGrundstuecksflaeche;
+    protected Float versiegelteFlaeche;
+    protected Float spielUndFreizeitflaeche;
+    protected Float flaecheDerNebenanlagen;
+    protected Float flaecheDerGemeinschaftsanlagen;
+    protected Float stellplaetzeUndDerenZufahrten;
 
     /**
      * Ruft den Wert der bebauteGrundstuecksflaeche-Eigenschaft ab.
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public BigInteger getBebauteGrundstuecksflaeche() {
+    public Float getBebauteGrundstuecksflaeche() {
         return bebauteGrundstuecksflaeche;
     }
 
@@ -86,10 +77,10 @@ public class Grundstuecksflaechen {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public void setBebauteGrundstuecksflaeche(BigInteger value) {
+    public void setBebauteGrundstuecksflaeche(Float value) {
         this.bebauteGrundstuecksflaeche = value;
     }
 
@@ -98,10 +89,10 @@ public class Grundstuecksflaechen {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public BigInteger getNichtBebauteGrundstuecksflaeche() {
+    public Float getNichtBebauteGrundstuecksflaeche() {
         return nichtBebauteGrundstuecksflaeche;
     }
 
@@ -110,10 +101,10 @@ public class Grundstuecksflaechen {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public void setNichtBebauteGrundstuecksflaeche(BigInteger value) {
+    public void setNichtBebauteGrundstuecksflaeche(Float value) {
         this.nichtBebauteGrundstuecksflaeche = value;
     }
 
@@ -122,10 +113,10 @@ public class Grundstuecksflaechen {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public BigInteger getVersiegelteFlaeche() {
+    public Float getVersiegelteFlaeche() {
         return versiegelteFlaeche;
     }
 
@@ -134,10 +125,10 @@ public class Grundstuecksflaechen {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public void setVersiegelteFlaeche(BigInteger value) {
+    public void setVersiegelteFlaeche(Float value) {
         this.versiegelteFlaeche = value;
     }
 
@@ -146,10 +137,10 @@ public class Grundstuecksflaechen {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public BigInteger getSpielUndFreizeitflaeche() {
+    public Float getSpielUndFreizeitflaeche() {
         return spielUndFreizeitflaeche;
     }
 
@@ -158,10 +149,10 @@ public class Grundstuecksflaechen {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public void setSpielUndFreizeitflaeche(BigInteger value) {
+    public void setSpielUndFreizeitflaeche(Float value) {
         this.spielUndFreizeitflaeche = value;
     }
 
@@ -170,10 +161,10 @@ public class Grundstuecksflaechen {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public BigInteger getFlaecheDerNebenanlagen() {
+    public Float getFlaecheDerNebenanlagen() {
         return flaecheDerNebenanlagen;
     }
 
@@ -182,10 +173,10 @@ public class Grundstuecksflaechen {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public void setFlaecheDerNebenanlagen(BigInteger value) {
+    public void setFlaecheDerNebenanlagen(Float value) {
         this.flaecheDerNebenanlagen = value;
     }
 
@@ -194,10 +185,10 @@ public class Grundstuecksflaechen {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public BigInteger getFlaecheDerGemeinschaftsanlagen() {
+    public Float getFlaecheDerGemeinschaftsanlagen() {
         return flaecheDerGemeinschaftsanlagen;
     }
 
@@ -206,10 +197,10 @@ public class Grundstuecksflaechen {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public void setFlaecheDerGemeinschaftsanlagen(BigInteger value) {
+    public void setFlaecheDerGemeinschaftsanlagen(Float value) {
         this.flaecheDerGemeinschaftsanlagen = value;
     }
 
@@ -218,10 +209,10 @@ public class Grundstuecksflaechen {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public BigInteger getStellplaetzeUndDerenZufahrten() {
+    public Float getStellplaetzeUndDerenZufahrten() {
         return stellplaetzeUndDerenZufahrten;
     }
 
@@ -230,10 +221,10 @@ public class Grundstuecksflaechen {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public void setStellplaetzeUndDerenZufahrten(BigInteger value) {
+    public void setStellplaetzeUndDerenZufahrten(Float value) {
         this.stellplaetzeUndDerenZufahrten = value;
     }
 

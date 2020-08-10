@@ -25,31 +25,53 @@
   <xs:import schemaLocation="http://www.osci.de/xinneres/behoerde/4/xinneres-behoerde.xsd" namespace="http://www.osci.de/xinneres/behoerde/4" />
   <xs:import schemaLocation="http://xoev.de/latinchars/1_1/datatypes/latinchars.xsd" namespace="http://xoev.de/latinchars/1_1/datatypes" />
   <xs:complexType name="AbweichungBeantragt">
-    <xs:annotation>
-      <xs:documentation>Dieser Typ beinhaltet die Parameter einer Abweichung von öffentlich-rechtlichen Bestimmungen, die der Bauaufsichtsbehörde zur Zulassung vorgelegt wird.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="art" type="xbau:Code.AbweichungArt">
-        <xs:annotation>
-          <xs:documentation>Hier ist einzutragen, als welche Art von Abweichung die beantragte Abweichung einzustufen ist.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="vorschrift" type="xbau:Text">
-        <xs:annotation>
-          <xs:documentation>In diesem Element ist die Vorschrift der materiellen Anforderung zu bezeichnen: Es sind Referenzen auf die Rechtsnormen einzutragen, auf die sich die bearbeitete Abweichung bezieht.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="beschreibung" type="xbau:Text">
-        <xs:annotation>
-          <xs:documentation>In diesen Objekt ist der Abweichungsgegenstand im Detail zu erläutern.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="begruendung" type="xbau:Text">
-        <xs:annotation>
-          <xs:documentation>In diesem Element ist zur beantragten Abweichung eine Erläuterung zu geben, warum die beantragte Zulassung aus Sicht des Antragstellers gerechtfertigt ist.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
+  	<xs:annotation>
+  		<xs:documentation>
+  			Dieser Typ beinhaltet die Parameter einer Abweichung von
+  			öffentlich-rechtlichen Bestimmungen, die der
+  			Bauaufsichtsbehörde zur Zulassung vorgelegt wird.
+  		</xs:documentation>
+  	</xs:annotation>
+  	<xs:sequence>
+  		<xs:element name="art" type="xbau:Code.AbweichungArt">
+  			<xs:annotation>
+  				<xs:documentation>
+  					Hier ist einzutragen, als welche Art von
+  					Abweichung die beantragte Abweichung einzustufen
+  					ist.
+  				</xs:documentation>
+  			</xs:annotation>
+  		</xs:element>
+  		<xs:element name="vorschrift" type="xbau:Text">
+  			<xs:annotation>
+  				<xs:documentation>
+  					In diesem Element ist die Vorschrift der
+  					materiellen Anforderung zu bezeichnen: Es sind
+  					Referenzen auf die Rechtsnormen einzutragen, auf
+  					die sich die bearbeitete Abweichung bezieht.
+  				</xs:documentation>
+  			</xs:annotation>
+  		</xs:element>
+  		<xs:element name="beschreibung" type="xbau:Text">
+  			<xs:annotation>
+  				<xs:documentation>
+  					In diesen Objekt ist der Abweichungsgegenstand im
+  					Detail zu erläutern.
+  				</xs:documentation>
+  			</xs:annotation>
+  		</xs:element>
+  		<xs:element name="begruendung" type="xbau:Text">
+  			<xs:annotation>
+  				<xs:documentation>
+  					In diesem Element ist zur beantragten Abweichung
+  					eine Erläuterung zu geben, warum die beantragte
+  					Zulassung aus Sicht des Antragstellers
+  					gerechtfertigt ist.
+  				</xs:documentation>
+  			</xs:annotation>
+  		</xs:element>
+  	</xs:sequence>
+  	<xs:attribute name="referenz" type="xs:string"></xs:attribute>
   </xs:complexType>
   <xs:complexType name="AbweichungBearbeitet">
     <xs:annotation>
@@ -393,7 +415,7 @@ Beispiele: Hinterhof, 3. Aufgang, Haus A, 3. Stock, Appartement 25a,  3. Stock -
       <xs:documentation>Dieser Typ beinhaltet die Parameter für das Maß der baulichen Nutzung.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="hoeheDerBaulichenAnlage" minOccurs="0" type="xs:positiveInteger">
+      <xs:element name="hoeheDerBaulichenAnlage" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Höhe der bauliche Anlage. Angabe: Anzahl Meter</xs:documentation>
         </xs:annotation>
@@ -403,22 +425,22 @@ Beispiele: Hinterhof, 3. Aufgang, Haus A, 3. Stock, Appartement 25a,  3. Stock -
           <xs:documentation>Anzahl der Vollgeschosse</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="grundflaechenDerBaulichenAnlage" minOccurs="0" type="xs:positiveInteger">
+      <xs:element name="grundflaechenDerBaulichenAnlage" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Grundflächen der baulichen Anlage (GR). Angabe: Anzahl Quadratmeter</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="geschossflaeche" minOccurs="0" type="xs:positiveInteger">
+      <xs:element name="geschossflaeche" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Geschossfläche (GF). Angabe: Anzahl Quadratmeter</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="baumasse" minOccurs="0" type="xs:positiveInteger">
+      <xs:element name="baumasse" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Baumasse (BM). Angabe: Anzahl Kubikmeter</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="verkaufsflaeche" minOccurs="0" type="xs:positiveInteger">
+      <xs:element name="verkaufsflaeche" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Verkaufsfläche. Angabe: Anzahl Quadratmeter</xs:documentation>
         </xs:annotation>
@@ -984,37 +1006,38 @@ Aus der GML-Dokumentation: "A Polygon is a special surface that is defined by a 
       <xs:documentation>Dieser Typ fasst Angaben zu den Grundstücksflächen des Vorhabens zusammen.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="bebauteGrundstuecksflaeche" minOccurs="0" type="xs:positiveInteger">
+      <xs:element name="bebauteGrundstuecksflaeche" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Bebaute Grundstuecksflaeche. Angabe: Anzahl Quadratmeter</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="nichtBebauteGrundstuecksflaeche" minOccurs="0" type="xs:positiveInteger">
+      <xs:element name="nichtBebauteGrundstuecksflaeche" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Nicht-bebaute Grundstücksflächen. Angabe: Anzahl Quadratmeter</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="versiegelteFlaeche" minOccurs="0" type="xs:positiveInteger">
+      <xs:element name="versiegelteFlaeche" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>versiegelte Flächen. Angabe: Anzahl Quadratmeter</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="spielUndFreizeitflaeche" minOccurs="0" type="xs:positiveInteger">
+      <xs:element name="spielUndFreizeitflaeche" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Spiel- und Freizeitflächen. Angabe: Anzahl Quadratmeter</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="flaecheDerNebenanlagen" minOccurs="0" type="xs:positiveInteger">
+
+            <xs:element name="flaecheDerNebenanlagen" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Flächen der Nebenanlagen. Angabe: Anzahl Quadratmeter</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="flaecheDerGemeinschaftsanlagen" minOccurs="0" type="xs:positiveInteger">
+            <xs:element name="flaecheDerGemeinschaftsanlagen" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Flächen der Gemeinschaftsanlagen. Angabe: Anzahl Quadratmeter</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="stellplaetzeUndDerenZufahrten" minOccurs="0" type="xs:positiveInteger">
+      <xs:element name="stellplaetzeUndDerenZufahrten" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Stellplätze und deren Zufahrten. Angabe: Anzahl Quadratmeter</xs:documentation>
         </xs:annotation>
@@ -1591,17 +1614,17 @@ Dieser Identifier geht mit den Antragsnachrichten der Bauaufsichtsbehörde zu un
       <xs:documentation>Dieser Typ fasst die städtebaulichen Kennzahlen des Vorhabens zusammen.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="geschossflaechenzahl" minOccurs="0" type="xs:short">
+      <xs:element name="geschossflaechenzahl" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Die Geschossflächenzah (GFZl, BauNVO, § 20) gibt das Verhältnis der gesamten Geschossfläche aller Vollgeschosse der baulichen Anlagen auf einem Grundstück zu der Fläche des Baugrundstücks an. Die GFZ ist eine dimensionslose Größe und wird mit ein oder zwei Dezimalstellen angegeben.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="grundflaechenzahl" minOccurs="0" type="xs:short">
+      <xs:element name="grundflaechenzahl" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Die Grundflächenzahl (GRZ, BauNVO, § 19) gibt den Flächenanteil eines Baugrundstückes an, der überbaut werden darf; sie wird mit ein oder zwei Dezimalstellen angegeben.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="baumassenzahl" minOccurs="0" type="xs:short">
+      <xs:element name="baumassenzahl" minOccurs="0" type="xs:float">
         <xs:annotation>
           <xs:documentation>Die Baumassenzahl (BMZ, BauNVO, § 21), gibt an, wie viel Kubikmeter Baumasse je Quadratmeter Fläche eines Baugrundstücks zulässig oder vorhanden sind.</xs:documentation>
         </xs:annotation>

@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.8-b130911.1802 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2019.07.16 um 10:40:06 AM CEST 
+// Generiert: 2019.07.18 um 07:55:25 AM CEST 
 //
 
 
@@ -29,12 +29,12 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="hoeheDerBaulichenAnlage" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
+ *         &lt;element name="hoeheDerBaulichenAnlage" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
  *         &lt;element name="anzahlVollgeschosse" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="grundflaechenDerBaulichenAnlage" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="geschossflaeche" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="baumasse" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="verkaufsflaeche" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
+ *         &lt;element name="grundflaechenDerBaulichenAnlage" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         &lt;element name="geschossflaeche" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         &lt;element name="baumasse" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         &lt;element name="verkaufsflaeche" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
  *         &lt;element name="grundstuecksflaechen" type="{http://www.xleitstelle.de/xbau/schema/2/1/}Grundstuecksflaechen" minOccurs="0"/>
  *         &lt;element name="staedtebaulicheKennzahlen" type="{http://www.xleitstelle.de/xbau/schema/2/1/}StaedtebaulicheKennzahlen" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="kennzahlen" type="{http://www.xleitstelle.de/xbau/schema/2/1/}Kennzahlen" maxOccurs="unbounded" minOccurs="0"/>
@@ -62,18 +62,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class BaulicheNutzungMass {
 
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger hoeheDerBaulichenAnlage;
+    protected Float hoeheDerBaulichenAnlage;
     @XmlSchemaType(name = "positiveInteger")
     protected BigInteger anzahlVollgeschosse;
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger grundflaechenDerBaulichenAnlage;
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger geschossflaeche;
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger baumasse;
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger verkaufsflaeche;
+    protected Float grundflaechenDerBaulichenAnlage;
+    protected Float geschossflaeche;
+    protected Float baumasse;
+    protected Float verkaufsflaeche;
     protected Grundstuecksflaechen grundstuecksflaechen;
     protected List<StaedtebaulicheKennzahlen> staedtebaulicheKennzahlen;
     protected List<Kennzahlen> kennzahlen;
@@ -84,10 +79,10 @@ public class BaulicheNutzungMass {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public BigInteger getHoeheDerBaulichenAnlage() {
+    public Float getHoeheDerBaulichenAnlage() {
         return hoeheDerBaulichenAnlage;
     }
 
@@ -96,10 +91,10 @@ public class BaulicheNutzungMass {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public void setHoeheDerBaulichenAnlage(BigInteger value) {
+    public void setHoeheDerBaulichenAnlage(Float value) {
         this.hoeheDerBaulichenAnlage = value;
     }
 
@@ -132,10 +127,10 @@ public class BaulicheNutzungMass {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public BigInteger getGrundflaechenDerBaulichenAnlage() {
+    public Float getGrundflaechenDerBaulichenAnlage() {
         return grundflaechenDerBaulichenAnlage;
     }
 
@@ -144,10 +139,10 @@ public class BaulicheNutzungMass {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public void setGrundflaechenDerBaulichenAnlage(BigInteger value) {
+    public void setGrundflaechenDerBaulichenAnlage(Float value) {
         this.grundflaechenDerBaulichenAnlage = value;
     }
 
@@ -156,10 +151,10 @@ public class BaulicheNutzungMass {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public BigInteger getGeschossflaeche() {
+    public Float getGeschossflaeche() {
         return geschossflaeche;
     }
 
@@ -168,10 +163,10 @@ public class BaulicheNutzungMass {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public void setGeschossflaeche(BigInteger value) {
+    public void setGeschossflaeche(Float value) {
         this.geschossflaeche = value;
     }
 
@@ -180,10 +175,10 @@ public class BaulicheNutzungMass {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public BigInteger getBaumasse() {
+    public Float getBaumasse() {
         return baumasse;
     }
 
@@ -192,10 +187,10 @@ public class BaulicheNutzungMass {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public void setBaumasse(BigInteger value) {
+    public void setBaumasse(Float value) {
         this.baumasse = value;
     }
 
@@ -204,10 +199,10 @@ public class BaulicheNutzungMass {
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public BigInteger getVerkaufsflaeche() {
+    public Float getVerkaufsflaeche() {
         return verkaufsflaeche;
     }
 
@@ -216,10 +211,10 @@ public class BaulicheNutzungMass {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link Float }
      *     
      */
-    public void setVerkaufsflaeche(BigInteger value) {
+    public void setVerkaufsflaeche(Float value) {
         this.verkaufsflaeche = value;
     }
 
