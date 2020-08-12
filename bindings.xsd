@@ -1,0 +1,59 @@
+<jxb:bindings version="2.0" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!--  this attempt does NOT work: -->
+<!-- ===================================================== -->
+<!-- RESOLVE CLASS CONFLICT: 'SphericalCS vs. sphericalCS' -->
+<!-- ===================================================== -->
+
+	<!--========= coordinateReferenceSystems.xsd ========= -->
+	<!--jxb:bindings schemaLocation="http://schemas.opengis.net/gml/3.2.1/coordinateReferenceSystems.xsd">	
+    	<jxb:bindings node="//xsd:element[@name='sphericalCS']">
+   			<jxb:property name="sphericalCSCoordinateReferenceSystems"/>
+    	</jxb:bindings>
+    </jxb:bindings-->
+
+	<!--============= coordinateSystems.xsd ============== -->
+	<!-- jxb:bindings schemaLocation="http://schemas.opengis.net/gml/3.2.1/coordinateSystems.xsd">	
+    	<jxb:bindings node="//xsd:element[@name='SphericalCS']">
+   			<jxb:property name="sSphericalCSCoordinateSystems"/>
+    	</jxb:bindings>
+    </jxb:bindings-->
+
+<!-- ===================================================== -->
+
+
+
+
+
+
+<!-- ====================================================================================== -->
+<!-- =============================== other naming conflicts =============================== -->
+<!-- ====================================================================================== -->
+
+
+<!-- ====================================================== -->
+<!-- ========== RESOLVE NAMING CONFLICT: 'title' ========== -->
+<!-- ====================================================== -->
+
+    <!--========== xlink.xsd ==========-->
+    <jxb:bindings schemaLocation="http://www.w3.org/1999/xlink.xsd" node="/xsd:schema">
+
+        <jxb:bindings node="//xsd:attributeGroup[@name='arcAttrs']">
+            <jxb:bindings node=".//xsd:attribute[@ref='xlink:title']">
+                <jxb:property name="titleArcAttrs"/>
+            </jxb:bindings>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xsd:attributeGroup[@name='locatorAttrs']">
+            <jxb:bindings node=".//xsd:attribute[@ref='xlink:title']">
+                <jxb:property name="titleLocatorAttrs"/>
+            </jxb:bindings>
+        </jxb:bindings>
+
+    </jxb:bindings>
+<!-- ====================================================== -->
+
+ 
+
+
+</jxb:bindings>
